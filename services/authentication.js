@@ -9,13 +9,13 @@ function createTokenForUser(user){
         profileImageURL:user.profileImageURL,
         role:user.role,
     }
-    const token = JWT.sign(payload,secretKey)
+    const token = JWT.sign(payload,secretKey,{})
 
     return token
 }
 
 function validateToken(token){
-const payload =JWT.verify(token.secretKey)
+const payload =JWT.verify(token,secretKey)
 return payload
 }
 

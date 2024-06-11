@@ -53,8 +53,8 @@ userSchema.static("matchPasswordAndGenerateToken", async function (email, passwo
   const user = await this.findOne({ email });
   if (!user) throw new Error("User Not Found !");
 
-  // const salt = user.salt;
-  const salt = "SecretKey";
+  const salt = user.salt;
+  // const salt = "SecretKey";
   const hashedPassword = user.password;
 
   const userProvideHashedPassword = createHmac("sha256", salt)

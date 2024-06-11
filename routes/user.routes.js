@@ -14,7 +14,6 @@ router.get("/signup", (req, res) => {
 router.post("/signin", async (req, res) => {
   const { email, password } = req.body;
   // console.log(email,password);
-
   // await User.findOne({
   //   email,
   //   password
@@ -39,14 +38,17 @@ router.post("/signup", async (req, res) => {
       email,
       password,
     });
-  
+
     return res.redirect("/");
   } catch (error) {
-    return res.render("signup",{
-      error:"Something wrong while create account !!"
-    })
+    return res.render("signup", {
+      error: "Something wrong while create account !!",
+    });
   }
- 
+});
+
+router.get("/logout", (req, res) => {
+  res.clearCookie("token").redirect("/");
 });
 
 module.exports = router;
