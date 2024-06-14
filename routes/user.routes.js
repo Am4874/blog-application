@@ -40,6 +40,9 @@ router.post("/signup", async (req, res) => {
     });
 
     return res.redirect("/");
+    // return res.render("signin",{
+    //   message:"User Created Successfully !!"
+    // });
   } catch (error) {
     return res.render("signup", {
       error: "Something wrong while create account !!",
