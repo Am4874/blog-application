@@ -6,10 +6,10 @@
   </head>
   <body>
     <%- include('./partials/nav') %> 
-    <div class="container mt-3 text-center ">
-      <div class="row row-cols-3">
+    <div class="container mt-3 text-center">
+      <div class="row align-items-center justify-content-center">
             <% blogs.forEach(blog => { %>
-              <div class="col">
+              <div class="col mt-2">
                 <div class="card border" style="width: 18rem;">
                   <img src="<%= blog.coverImageURL %>" class="card-img-top w-100 mh-50" alt="cover-image">
                   <div class="card-body">
